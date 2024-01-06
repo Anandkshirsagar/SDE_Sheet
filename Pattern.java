@@ -59,5 +59,6 @@ public class Pattern {
         //triangle_122333();
        // DecTraingle();
        DecTraingle123();
+       jsj
     }
 }
