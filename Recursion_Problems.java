@@ -26,9 +26,29 @@ public class Recursion_Problems {
         RevLinear(i, n - 1);
     }
 
+    public static void linear_Arr(int i, int n) { // using backtracking 1-10
+        if (i > n) {
+            return;
+        }
+        linear_Arr(i - 1, n);
+        System.out.println(i);
+
+    }
+
+    public static void RevLinearArr(int i, int n) { // using backtracking 10-1
+        if (i > n) {
+            return;
+        }
+        RevLinearArr(i + 1, n);
+        System.out.println(i);
+
+    }
+
     public static void main(String[] args) {
         // print_Name(1, 3);
         // linear(1, 10);
-        RevLinear(1, 10);
+        // RevLinear(1, 10);
+        // linear(1, 10);
+        RevLinearArr(1, 10);
     }
 }
