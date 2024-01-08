@@ -44,11 +44,33 @@ public class Recursion_Problems {
 
     }
 
+    public static void Sum_Of_N_Natu_num(int i, int n, int sum) {
+
+        if (i > n) {
+            System.out.println("Sum of First N natural Number is " + sum);
+            return;
+        }
+
+        Sum_Of_N_Natu_num(i + 1, n, sum += i);
+
+    }
+
+    public static void factorial(int i, int n, int fact) {
+        if (i > n) {
+            System.out.println(fact);
+            return;
+        }
+        factorial(i + 1, n, fact * i);
+    }
+
     public static void main(String[] args) {
         // print_Name(1, 3);
         // linear(1, 10);
         // RevLinear(1, 10);
         // linear(1, 10);
-        RevLinearArr(1, 10);
+        // RevLinearArr(1, 10);
+        // Sum_Of_N_Natu_num(1, 10, 0);
+        factorial(1, 4, 1);
+
     }
 }
