@@ -57,10 +57,18 @@ public class Recursion_Problems {
 
     public static void factorial(int i, int n, int fact) {
         if (i > n) {
-            System.out.println(fact);
+            System.out.println("Factorial of Number is " + fact);
             return;
         }
         factorial(i + 1, n, fact * i);
+    }
+
+    public static int Fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+
+        }
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
     }
 
     public static void main(String[] args) {
@@ -70,7 +78,8 @@ public class Recursion_Problems {
         // linear(1, 10);
         // RevLinearArr(1, 10);
         // Sum_Of_N_Natu_num(1, 10, 0);
-        factorial(1, 4, 1);
+        // factorial(1, 4, 1);
+        System.out.println(Fibonacci(6));
 
     }
 }
