@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Sorting1 {
     public static void Selection(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
                     int swap = arr[i];
@@ -12,6 +12,22 @@ public class Sorting1 {
             }
         }
         System.out.println("After Sorting");
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+    }
+
+    public static void Bubble(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int swap = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = swap;
+                }
+            }
+        }
+        System.out.println("After Bubble Sort");
         for (int x : arr) {
             System.out.print(x + " ");
         }
@@ -27,6 +43,7 @@ public class Sorting1 {
             arr[j] = sc.nextInt();
         }
 
-        Selection(arr);
+        // Selection(arr);
+        Bubble(arr);
     }
 }
