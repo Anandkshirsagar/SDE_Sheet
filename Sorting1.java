@@ -33,6 +33,10 @@ public class Sorting1 {
         }
     }
 
+    public static void Insertion(int arr[]) {
+        // Incomplete
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Number of Element");
@@ -44,6 +48,7 @@ public class Sorting1 {
         }
 
         // Selection(arr);
-        Bubble(arr);
+        // Bubble(arr);
+        Insertion(arr);
     }
 }
