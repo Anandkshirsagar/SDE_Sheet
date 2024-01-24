@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class ArrayEassy {
@@ -85,8 +86,77 @@ public class ArrayEassy {
         }
     }
 
+    public static void removeZeroEnd(int arr[]) {
+        ArrayList<Integer> ar = new ArrayList<>();
+        int len = arr.length;
+
+        for (int i = 0; i < len; i++) {
+            if (arr[i] != 0) {
+                ar.add(arr[i]);
+            }
+        }
+        int len1 = ar.size();
+        for (int j = 0; j < len1; j++) {
+            arr[j] = ar.get(j);
+        }
+        for (int i = len1; i < len; i++) {
+            arr[i] = 0;
+        }
+        for (int x : arr) {
+            System.out.println(x);
+        }
+    }
+
+    public static int LinearSearch(int arr[], int ele) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == ele) {
+                return i;
+
+            }
+        }
+
+        return -1;
+    }
+
+    public static void union(int arr1[], int arr2[]) {
+        HashSet<Integer> hs = new HashSet<>();
+        for (int x : arr1) {
+            hs.add(x);
+        }
+        for (int y : arr2) {
+            hs.add(y);
+        }
+        for (int k : hs) {
+            System.out.println(k);
+        }
+    }
+
+    public static void intersection(int arr1[], int arr2[]) {
+        int i = 0;
+        int j = 0;
+        int temp[] = new int[5];
+        int k = 0;
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
+                i++;
+            } else if (arr2[j] < arr1[i]) {
+                j++;
+            } else {
+                temp[k] = arr1[i];
+                k++;
+            }
+            if (arr1[i] < arr2[j]) {
+                return;
+
+            }
+        }
+        for (int z : temp) {
+            System.out.println(z);
+        }
+    }
+
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 7, 55, 6 };
+        int arr[] = { 1, 2, 7, 0, 55, 0, 6, 0 };
         // int arr[] = { 1, 2, 3, 3, 2, 1 }; // for check remove duplicate from arr
         // int arr[] = { 1, 2, 3, 4 };//for check ischeck function
         // System.out.println("Largest Number in the array " + largest(arr));
@@ -94,7 +164,13 @@ public class ArrayEassy {
         // System.out.println(ischeck(arr));
         // removeDup(arr);
         // leftRoteteByOne(arr);
-        rotateDplace(arr, 3);
+        // rotateDplace(arr, 3);
+        // removeZeroEnd(arr);
+        // System.out.println(LinearSearch(arr, 78));
+        int arr1[] = { 1, 2, 3, 4, 5 };
+        int arr2[] = { 2, 3, 4, 5, 6 };
+        // union(arr1, arr2);
+        intersection(arr1, arr2);
 
     }
 }
