@@ -155,8 +155,23 @@ public class ArrayEassy {
         }
     }
 
+    public static void maxSubArrSum(int arr[]){
+int k=3;
+int sum=0;
+int len=0;
+for(int i=0;i<arr.length;i++){
+    for(int j=i;j<arr.length;j++){
+      sum+=arr[j];
+      if(sum==k){
+        len=Math.max(len,i-(j+1));
+      }
+
+    }
+    System.out.println(len);
+}
+    }
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 7, 0, 55, 0, 6, 0 };
+        //int arr[] = { 1, 2, 7, 0, 55, 0, 6, 0 };
         // int arr[] = { 1, 2, 3, 3, 2, 1 }; // for check remove duplicate from arr
         // int arr[] = { 1, 2, 3, 4 };//for check ischeck function
         // System.out.println("Largest Number in the array " + largest(arr));
@@ -170,7 +185,9 @@ public class ArrayEassy {
         int arr1[] = { 1, 2, 3, 4, 5 };
         int arr2[] = { 2, 3, 4, 5, 6 };
         // union(arr1, arr2);
-        intersection(arr1, arr2);
+        //intersection(arr1, arr2);
+        int arr[]={1,2,3,1,1,1,3};
+        maxSubArrSum(arr);
 
     }
 }
