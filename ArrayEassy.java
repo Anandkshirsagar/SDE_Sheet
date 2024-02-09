@@ -158,7 +158,7 @@ public class ArrayEassy {
     public static void maxSubArrSum(int arr[]){
 int k=3;
 int sum=0;
-int len=0;
+int len=0;                        //incomplete
 for(int i=0;i<arr.length;i++){
     for(int j=i;j<arr.length;j++){
       sum+=arr[j];
@@ -167,9 +167,10 @@ for(int i=0;i<arr.length;i++){
       }
 
     }
-    System.out.println(len);
+    
 }
-    }
+System.out.println(len);
+}
     public static void main(String[] args) {
         //int arr[] = { 1, 2, 7, 0, 55, 0, 6, 0 };
         // int arr[] = { 1, 2, 3, 3, 2, 1 }; // for check remove duplicate from arr
@@ -187,7 +188,7 @@ for(int i=0;i<arr.length;i++){
         // union(arr1, arr2);
         //intersection(arr1, arr2);
         int arr[]={1,2,3,1,1,1,3};
-        maxSubArrSum(arr);
+        maxSubArrSum(arr);           //incomplte review
 
     }
 }
