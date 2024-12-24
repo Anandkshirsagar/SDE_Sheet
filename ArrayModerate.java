@@ -96,7 +96,7 @@ public class ArrayModerate {
          }
        return miniDayprice; }
 
-       public static void Rearrange(int rearr[]){
+       public static void Rearrange(int rearr[]){    //Positive = negative
         int n=rearr.length;
          int ans[]=new int[n];
          int j=0;
@@ -116,6 +116,41 @@ public class ArrayModerate {
          }
        }
 
+       public static void ReArr(int arr[]){    //positive != Negative
+        int ans[]=new int[arr.length];
+        int cnt=0;
+        int cnt1=0;
+       for(int i=0;i<arr.length;i++){
+        if(arr[i]<0){cnt++;}
+        else {cnt1++;}}
+        int pos[]=new int[cnt1];
+        int neg[]=new int[cnt];
+        int k=0;
+        int j=0;
+        //System.out.println(pos.length);
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<0){
+                neg[k]=arr[i];
+                k++;
+            }
+            else{
+                pos[j++]=arr[i];
+            }
+        }
+        int z=1;
+        int t=0;
+        for(int x=0;x<2;x++){
+           ans[x*2]=pos[x];
+           ans[x*2+1]=neg[x];
+        }
+     int c=pos.length;
+        for(int l=2;l<pos.length;l++){
+            ans[c]=pos[l];
+            c++;
+        }
+        for(int x:ans){System.out.print(x+" ");}
+       }
+
     public static void main(String[] args) {
         //int arr[]={2,6,5,8,11};
         int Target=14;
@@ -130,6 +165,8 @@ public class ArrayModerate {
        int arr2[]={7,1,5,3,6,4};
        //System.out.println(stocks1(arr2));
        int rearr[]={1,-2,-3,4,5,-6};
-       Rearrange(rearr);
+       //Rearrange(rearr);
+       int arr[]={-1,2,3,4,-3,1};
+       ReArr(arr);
     }
 }
