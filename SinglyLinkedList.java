@@ -66,12 +66,29 @@ public class SinglyLinkedList {
         return head;
     }
 
+    public static node deleteValue(node head, int val) {
+        if (head == null)
+            return head;
+        if (head.data == val)
+            return deleteHead(head);
+        node temp = head;
+        while (temp != null) {
+            if (temp.next.data == val) {
+                break;
+            }
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        return head;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4 };
         node head = convertArrayToLinkedList(arr);
         // head = deleteHead(head);
         // head = deleteTail(head);
-        head = deleteK(head, 2);
+        // head = deleteK(head, 2);
+        head = deleteValue(head, 3);
         print(head);
     }
 }
