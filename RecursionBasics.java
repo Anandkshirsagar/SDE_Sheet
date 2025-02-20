@@ -35,11 +35,76 @@ public class RecursionBasics {
         System.out.println(ind);
     }
 
+    public static void sumOfNatural(int sum, int n, int i) {
+        if (i > n) {
+            System.out.println(sum);
+            return;
+        }
+
+        sumOfNatural(sum + i, n, i + 1);
+
+    }
+
+    static int sum = 0;
+
+    public static int sumOfNatural1(int i, int n) {
+        if (i > n)
+            return 0;
+        sum += i;
+        sumOfNatural1(i + 1, n);
+        return sum;
+    }
+
+    public static int sumOfNatural2(int n) {
+        if (n == 0)
+            return 0;
+        return n + sumOfNatural2(n - 1);
+    }
+
+    public static int factorial(int n) {
+        if (n == 0)
+            return 1;
+        return n * factorial(n - 1);
+    }
+
+    public static void reverseArray(int i, int arr[]) {
+        if (i >= arr.length)
+            return;
+        reverseArray(i + 1, arr);
+        System.out.print(arr[i] + " ");
+    }
+
+    public static boolean Palindrome(int i, String s, int n) {
+        if (i >= n / 2)
+            return true;
+        if (s.charAt(i) != s.charAt(n - i - 1))
+            return false;
+        return Palindrome(i + 1, s, n);
+    }
+
     public static void main(String[] args) {
         // print(0, 5);
         // linear(1, 5);
         // decreaOrder(1, 5);
         // backLinear(4, 4);
-        backDecrese(1, 5);
+        // backDecrese(1, 5);
+        // sumOfNatural(0, 10, 1);
+
+        // int res = sumOfNatural1(1, 10);
+        // System.out.println(res);
+
+        // int res1 = sumOfNatural2(5);
+        // System.out.println(res1);
+
+        // int res2 = factorial(4);
+        // System.out.println(res2);
+
+        // int arr[] = { 1, 2, 3, 4 };
+        // reverseArray(0, arr);
+
+        String s = "mamd";
+        int n = s.length();
+        boolean res3 = Palindrome(0, s, n);
+        System.out.println(res3);
     }
 }
