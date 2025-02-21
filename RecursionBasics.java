@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class RecursionBasics {
     public static void print(int ind, int n) {
         if (ind == n)
@@ -82,6 +84,44 @@ public class RecursionBasics {
         return Palindrome(i + 1, s, n);
     }
 
+    public static int fibonnaci(int n) {
+        if (n <= 1)
+            return n;
+        return fibonnaci(n - 1) + fibonnaci(n - 2);
+    }
+
+    public static void printSubSequence(int arr[], ArrayList<Integer> ar, int i, int n) {
+        if (i >= n) {
+            System.out.println(ar);
+            return;
+        }
+        ar.add(arr[i]);
+        printSubSequence(arr, ar, i + 1, n);
+        ar.remove(ar.size() - 1);
+        printSubSequence(arr, ar, i + 1, n);
+    }
+
+    public static int check(ArrayList<Integer> ar) {
+        int sum = 0;
+        for (int x : ar)
+            sum += x;
+        return sum;
+    }
+
+    public static void printSubSequenceSumK(int arr[], ArrayList<Integer> ar, int i, int n, int k) {
+        if (i >= n) {
+            if (check(ar) == k) {
+                System.out.println(ar);
+                return;
+            }
+            return;
+        }
+        ar.add(arr[i]);
+        printSubSequenceSumK(arr, ar, i + 1, n, k);
+        ar.remove(ar.size() - 1);
+        printSubSequenceSumK(arr, ar, i + 1, n, k);
+    }
+
     public static void main(String[] args) {
         // print(0, 5);
         // linear(1, 5);
@@ -102,9 +142,20 @@ public class RecursionBasics {
         // int arr[] = { 1, 2, 3, 4 };
         // reverseArray(0, arr);
 
-        String s = "mamd";
-        int n = s.length();
-        boolean res3 = Palindrome(0, s, n);
-        System.out.println(res3);
+        // String s = "mamd";
+        // int n = s.length();
+        // boolean res3 = Palindrome(0, s, n);
+        // System.out.println(res3);
+
+        // int res4 = fibonnaci(7);
+        // System.out.println(res4);
+
+        // int arr[] = { 1, 2, 3 };
+        // ArrayList<Integer> ar = new ArrayList<>();
+        // printSubSequence(arr, ar, 0, arr.length);
+
+        int arr[] = { 1, 2, 1 };
+        ArrayList<Integer> ar = new ArrayList<>();
+        printSubSequenceSumK(arr, ar, 0, arr.length, 2);
     }
 }
